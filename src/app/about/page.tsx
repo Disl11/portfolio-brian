@@ -1,0 +1,128 @@
+import Image from "next/image";
+import Link from "next/link";
+
+export default function About() {
+    return (
+        <>
+            {/* HERO */}
+            <section className="max-w-5xl mx-auto px-4 py-10 text-center">
+                <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                    Brian Farnier
+                </h1>
+                <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto">
+                    Développeur web/mobile junior, basé à Montpellier.
+                </p>
+
+                <div className="flex flex-wrap justify-center gap-3 mt-8">
+                    {[
+                        { label: "Python", color: "bg-blue-500/20 text-blue-300 border-blue-400/30" },
+                        { label: "Next.js", color: "bg-gray-500/20 text-gray-300 border-gray-400/30" },
+                        { label: "JavaScript", color: "bg-yellow-500/20 text-yellow-300 border-yellow-400/30" },
+                        { label: "Java (bases)", color: "bg-red-500/20 text-red-300 border-red-400/30" },
+                        { label: "Docker", color: "bg-sky-500/20 text-sky-300 border-sky-400/30" },
+                        { label: "Flutter", color: "bg-purple-500/20 text-purple-300 border-purple-400/30" },
+                    ].map(({ label, color }) => (
+                        <span
+                            key={label}
+                            className={`px-4 py-2 rounded-full border text-sm md:text-base ${color}`}
+                        >
+                            {label}
+                        </span>
+                    ))}
+                </div>
+
+
+                <a href="/CV_Brian_Farnier.pdf"
+                    download
+                    className="inline-block mt-8 px-6 py-3 bg-orange-300 text-[#061423] font-bold rounded-lg hover:bg-white transition">
+
+                    Télécharger mon CV
+                </a>
+            </section >
+
+            {/* PARCOURS */}
+            < section className="max-w-5xl mx-auto px-4 py-10" >
+                <h2 className="text-2xl text-orange-300 mb-6">Mon parcours</h2>
+                <p className="text-white/80 text-lg md:text-xl leading-relaxed mb-4">
+                    Tailleur de pierre pendant 12 ans, j'ai développé des compétences en rigueur,
+                    précision et travail en équipe à travers des projets exigeants principalement dans le luxe.
+                    J'ai obtenu un Brevet Professionnel (BP) auprès des Compagnons du Devoir,
+                    une formation qui m'a permis d'atteindre un haut niveau d'exigence et de savoir-faire.
+                </p>
+                <p className="text-white/80 text-lg md:text-xl leading-relaxed mb-4">
+                    En 2019-2020, j'ai effectué un PVT de 8 mois en Australie.
+                    Parti sans véritable niveau en anglais, cette expérience m'a permis de développer
+                    une capacité d'adaptation et d'améliorer significativement mes compétences linguistiques,
+                    atteignant aujourd'hui un niveau intermédiaire.
+                </p>
+                <p className="text-white/80 text-lg md:text-xl leading-relaxed">
+                    En 2025, j'ai entrepris une reconversion dans le développement web et mobile
+                    en suivant une formation de juin à avril. Aujourd'hui, je poursuis mon apprentissage
+                    et développe mes compétences à travers des projets.
+                </p>
+            </section >
+
+            {/* MÉTHODE */}
+            < section className="max-w-5xl mx-auto px-4 py-10" >
+                <h2 className="text-2xl text-orange-300 mb-6">Ma façon de travailler</h2>
+                <p className="text-white/80 text-lg md:text-xl leading-relaxed mb-4">
+                    J'essaie de produire un code propre, lisible et maintenable, tout en cherchant
+                    à progresser sur les bonnes pratiques. Lorsqu'un problème survient, je n'hésite
+                    pas à échanger afin de mieux comprendre et avancer efficacement.
+                </p>
+                <p className="text-white/80 text-lg md:text-xl leading-relaxed">
+                    Lors de ma formation, j'ai été initié aux méthodes Agile, notamment Scrum et Kanban.
+                    J'ai pu les mettre en pratique au sein de projets d'équipe, avec des réunions
+                    quotidiennes, une organisation en sprints et une gestion des tâches via des tableaux
+                    de suivi, notamment durant mon stage au sein de l'association ICATY.
+                </p>
+            </section >
+
+            {/* OBJECTIFS */}
+            < section className="max-w-5xl mx-auto px-4 py-16" >
+                <h2 className="text-2xl text-orange-300 mb-6">Mes objectifs</h2>
+                <p className="text-white/80 text-lg md:text-xl leading-relaxed">
+                    La taille de pierre m'a permis de développer une approche basée sur la précision,
+                    la rigueur et la recherche d'un résultat propre et soigné. Ce qui m'anime aujourd'hui
+                    dans le développement, c'est de comprendre comment concevoir des solutions claires,
+                    structurées et efficaces. Je suis en constant apprentissage, mais déjà capable de
+                    contribuer sur des projets concrets. Je cherche aujourd'hui une entreprise où je
+                    pourrai évoluer tout en contribuant activement aux projets.
+                </p>
+            </section >
+
+            {/* HOBBIES */}
+            <section className="max-w-5xl mx-auto px-4 py-16">
+                <h2 className="text-2xl text-orange-300 mb-6">Hobbies</h2>
+                <div className="flex flex-col md:flex-row items-center gap-10">
+                    <div className="flex flex-wrap gap-3 flex-1">
+                        {[
+                            "Badminton (compétition)",
+                            "Breakdance (battles et chorégraphies)",
+                            "Professeur de breakdance",
+                        ].map((hobby) => (
+                            <span
+                                key={hobby}
+                                className="px-4 py-2 rounded-full bg-white/10 text-white/80 border border-white/10"
+                            >
+                                {hobby}
+                            </span>
+                        ))}
+                    </div>
+
+                    <div className="w-full md:flex-1 flex justify-center">
+                        <div className="relative w-full max-w-sm h-64 rounded-xl overflow-hidden border border-white/10">
+                            <Image
+                                src="/images/breakdance.jpeg"
+                                alt="Breakdance en performance"
+                                fill
+                                sizes="(max-width: 768px) 100vw, 384px"
+                                className="object-cover object-top"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </>
+    );
+}

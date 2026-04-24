@@ -29,12 +29,26 @@ export default function RootLayout({
       lang="fr" suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+        />
+      </head>
       <body className="min-h-full flex flex-col">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           <Navbar />
-          <main>{children}</main>
+          <main className="flex-1 bg-[#061423] text-white min-h-screen ">{children}
+            < footer className="text-center py-6 border-t border-white/10" >
+              <p className="text-white/60">Brian Farnier</p>
+            </footer >
+          </main>
         </ThemeProvider>
-
       </body>
     </html>
   );
