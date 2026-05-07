@@ -9,7 +9,7 @@ export default function About() {
                 <h1 className="text-4xl md:text-6xl font-bold mb-6">
                     Brian Farnier
                 </h1>
-                <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto">
+                <p className="text-lg md:text-xl text-foreground max-w-2xl mx-auto">
                     Développeur web/mobile junior, basé à Montpellier.
                 </p>
 
@@ -43,19 +43,19 @@ export default function About() {
             {/* PARCOURS */}
             < section className="max-w-5xl mx-auto px-4 py-10" >
                 <h2 className="text-2xl text-orange-300 mb-6">Mon parcours</h2>
-                <p className="text-white/80 text-lg md:text-xl leading-relaxed mb-4">
+                <p className="text-foreground text-lg md:text-xl leading-relaxed mb-4">
                     Tailleur de pierre pendant 12 ans, j'ai développé des compétences en rigueur,
                     précision et travail en équipe à travers des projets exigeants principalement dans le luxe.
                     J'ai obtenu un Brevet Professionnel (BP) auprès des Compagnons du Devoir,
                     une formation qui m'a permis d'atteindre un haut niveau d'exigence et de savoir-faire.
                 </p>
-                <p className="text-white/80 text-lg md:text-xl leading-relaxed mb-4">
+                <p className="text-foreground text-lg md:text-xl leading-relaxed mb-4">
                     En 2019-2020, j'ai effectué un PVT de 8 mois en Australie.
                     Parti sans véritable niveau en anglais, cette expérience m'a permis de développer
                     une capacité d'adaptation et d'améliorer significativement mes compétences linguistiques,
                     atteignant aujourd'hui un niveau intermédiaire.
                 </p>
-                <p className="text-white/80 text-lg md:text-xl leading-relaxed">
+                <p className="text-foreground text-lg md:text-xl leading-relaxed">
                     En 2025, j'ai entrepris une reconversion dans le développement web et mobile
                     en suivant une formation de juin à avril. Aujourd'hui, je poursuis mon apprentissage
                     et développe mes compétences à travers des projets.
@@ -65,12 +65,12 @@ export default function About() {
             {/* MÉTHODE */}
             < section className="max-w-5xl mx-auto px-4 py-10" >
                 <h2 className="text-2xl text-orange-300 mb-6">Ma façon de travailler</h2>
-                <p className="text-white/80 text-lg md:text-xl leading-relaxed mb-4">
+                <p className="text-foreground text-lg md:text-xl leading-relaxed mb-4">
                     J'essaie de produire un code propre, lisible et maintenable, tout en cherchant
                     à progresser sur les bonnes pratiques. Lorsqu'un problème survient, je n'hésite
                     pas à échanger afin de mieux comprendre et avancer efficacement.
                 </p>
-                <p className="text-white/80 text-lg md:text-xl leading-relaxed">
+                <p className="text-foreground text-lg md:text-xl leading-relaxed">
                     Lors de ma formation, j'ai été initié aux méthodes Agile, notamment Scrum et Kanban.
                     J'ai pu les mettre en pratique au sein de projets d'équipe, avec des réunions
                     quotidiennes, une organisation en sprints et une gestion des tâches via des tableaux
@@ -81,7 +81,7 @@ export default function About() {
             {/* OBJECTIFS */}
             < section className="max-w-5xl mx-auto px-4 py-16" >
                 <h2 className="text-2xl text-orange-300 mb-6">Mes objectifs</h2>
-                <p className="text-white/80 text-lg md:text-xl leading-relaxed">
+                <p className="text-foreground text-lg md:text-xl leading-relaxed">
                     La taille de pierre m'a permis de développer une approche basée sur la précision,
                     la rigueur et la recherche d'un résultat propre et soigné. Ce qui m'anime aujourd'hui
                     dans le développement, c'est de comprendre comment concevoir des solutions claires,
@@ -103,7 +103,7 @@ export default function About() {
                         ].map((hobby) => (
                             <span
                                 key={hobby}
-                                className="px-4 py-2 rounded-full bg-white/10 text-white/80 border border-white/10"
+                                className="px-4 py-2 rounded-full bg-white/10 text-foreground border border-white/10"
                             >
                                 {hobby}
                             </span>

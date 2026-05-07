@@ -9,7 +9,7 @@ export default function UnJourInternet() {
                 <h1 className="text-4xl md:text-6xl font-bold mb-6">
                     Un jour internet
                 </h1>
-                <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto">
+                <p className="text-lg md:text-xl text-foreground max-w-2xl mx-auto">
                     Stack utilisée sur le projet
                 </p>
 
@@ -38,7 +38,7 @@ export default function UnJourInternet() {
                     Le projet
                 </h2>
                 <div className="flex flex-col md:flex-row items-center gap-10">
-                    <p className="text-white/80 text-lg md:text-xl leading-relaxed max-w-3xl">
+                    <p className="text-foreground text-lg md:text-xl leading-relaxed max-w-3xl">
                         Lors de mon stage au sein de l'association ICATY, j'ai participé au développement
                         d'une application mobile et web complète dans un contexte réel de situation
                         client/développeur. Ma mission principale était de concevoir l'application
@@ -66,7 +66,7 @@ export default function UnJourInternet() {
                 <h2 className="text-2xl md:text-3xl font-bold text-orange-300 mb-6">
                     Architecture de l'application
                 </h2>
-                <p className="text-white/80 text-lg md:text-xl leading-relaxed mb-10">
+                <p className="text-foreground text-lg md:text-xl leading-relaxed mb-10">
                     L'application « Un jour internet » est structurée en plusieurs parties afin
                     d'assurer une expérience fluide, sécurisée et évolutive.
                 </p>
@@ -83,7 +83,7 @@ export default function UnJourInternet() {
                     </div>
                 </div>
 
-                <div className="space-y-6 text-white/80 text-lg leading-relaxed">
+                <div className="space-y-6 text-foreground text-lg leading-relaxed">
                     {[
                         {
                             title: "Front-end mobile (pour les utilisateurs)",
@@ -102,7 +102,7 @@ export default function UnJourInternet() {
                         },
                     ].map(({ title, desc, badge }) => (
                         <div key={title}>
-                            <h3 className="text-white font-semibold mb-2">{title}</h3>
+                            <h3 className="text-foregroundfont-semibold mb-2">{title}</h3>
                             <p>
                                 {desc}{" "}
                                 <span className={`inline-block px-4 py-1 rounded-full border text-sm ${badge.color}`}>
@@ -117,7 +117,7 @@ export default function UnJourInternet() {
                     <h3 className="text-xl font-bold text-orange-300 mb-4">
                         Fonctionnalités principales
                     </h3>
-                    <ul className="list-disc list-inside space-y-2 text-white/80">
+                    <ul className="list-disc list-inside space-y-2 text-foreground">
                         {[
                             "Réception d'une notification quotidienne à heure définie",
                             "Accès au mot du jour et à ses explications",
@@ -147,7 +147,7 @@ export default function UnJourInternet() {
                             <div className="relative w-full max-w-sm mx-auto h-96 rounded-xl overflow-hidden">
                                 <Image src={src} alt={alt} fill sizes="384px" className="object-contain" />
                             </div>
-                            <p className="mt-3 text-white/70 text-sm md:text-base">{caption}</p>
+                            <p className="mt-3 text-foreground text-sm md:text-base">{caption}</p>
                         </div>
                     ))}
                 </div>
@@ -158,9 +158,9 @@ export default function UnJourInternet() {
                 <h2 className="text-2xl md:text-3xl font-bold text-orange-300 mb-6 text-center">
                     Conception & architecture technique
                 </h2>
-                <div className="space-y-10 text-white/80 text-lg md:text-xl leading-relaxed max-w-4xl mx-auto">
+                <div className="space-y-10 text-foreground text-lg md:text-xl leading-relaxed max-w-4xl mx-auto">
                     <div>
-                        <h3 className="text-white font-semibold mb-2">Conception de la base de données</h3>
+                        <h3 className="text-foreground font-semibold mb-2">Conception de la base de données</h3>
                         <p className="mb-6">
                             La base de données a été conçue en utilisant la méthode Merise afin de structurer
                             efficacement les données. J'ai utilisé l'outil Looping pour réaliser les modèles
@@ -169,7 +169,7 @@ export default function UnJourInternet() {
                         <div className="relative w-full max-w-2xl mx-auto h-80 rounded-xl overflow-hidden">
                             <Image src="/images/mcd.png" alt="MCD" fill sizes="672px" className="object-contain" />
                         </div>
-                        <p className="text-center text-sm text-white/60 mt-2">
+                        <p className="text-center text-sm text-foreground mt-2">
                             Modèle Conceptuel de Données (MCD) réalisé avec Looping
                         </p>
                     </div>

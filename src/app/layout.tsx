@@ -38,12 +38,12 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
           <Navbar />
-          <main className="flex-1 bg-[#061423] text-white min-h-screen ">{children}
+          <main className="flex-1 min-h-screen">{children}
             < footer className="text-center py-6 border-t border-white/10" >
               <p className="text-white/60">Brian Farnier</p>
             </footer >

@@ -34,7 +34,7 @@ export default function Home() {
           <h2 className="text-2xl md:text-3xl font-bold text-orange-300 mb-10">
             À PROPOS
           </h2>
-          <p className="text-white/80 text-lg md:text-xl leading-relaxed mb-6">
+          <p className="text-foreground text-lg md:text-xl leading-relaxed mb-6">
             Après 12 ans d'expérience en tant que tailleur de pierre, j'ai entamé
             une reconversion dans le développement web et mobile et je suis
             aujourd'hui développeur fullstack junior. Motivé et curieux, je cherche
@@ -112,11 +112,11 @@ export default function Home() {
       </section>
 
       {/* COMPÉTENCES */}
-      < section className="max-w-6xl mx-auto px-4 py-16" >
+      <section className="max-w-6xl mx-auto px-4 py-16">
         <h2 className="text-2xl md:text-3xl font-bold text-orange-300 mb-12">
           COMPÉTENCES
         </h2>
-        <p className="text-white/80 text-lg mb-10">
+        <p className="text-foreground text-lg mb-10">
           Je suis actuellement le plus à l'aise avec Next.js, Python, Flutter et SQLite.
         </p>
         <div className="flex flex-col md:flex-row justify-center items-center gap-16 text-center">
@@ -125,20 +125,26 @@ export default function Home() {
             { title: "Back-end", icons: ["nodejs", "symfony", "python"] },
             { title: "Mobile", icons: ["flutter"] },
             { title: "Database", icons: ["mysql", "sqlite"] },
-            { title: "Versioning", icons: ["git", "github",] },
+            { title: "Versioning", icons: ["git", "github"] },
             { title: "Conteneurisation", icons: ["docker"] },
           ].map(({ title, icons }) => (
             <div key={title}>
               <h3 className="mb-6 font-bold text-xl">{title}</h3>
               <div className="flex justify-center gap-6">
                 {icons.map((icon) => (
-                  <i key={icon} className={`devicon-${icon}-plain colored text-5xl`} />
+                  <i
+                    key={icon}
+                    className={`devicon-${icon}-plain text-5xl ${["symfony", "github"].includes(icon)
+                      ? "text-white"
+                      : "colored"
+                      }`}
+                  />
                 ))}
               </div>
             </div>
           ))}
         </div>
-      </section >
+      </section>
 
       {/* CONTACT */}
       < section className="max-w-3xl mx-auto px-4 py-16" >

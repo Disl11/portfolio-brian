@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Portfolio() {
     return (
-        <main className="bg-[#061423] text-white min-h-screen">
+        <main className="text-foreground min-h-screen">
 
             {/* HERO */}
             <section className="max-w-5xl mx-auto px-4 py-10 text-center">
@@ -37,7 +37,7 @@ export default function Portfolio() {
                 </h2>
 
                 <div className="flex flex-col md:flex-row items-center gap-10">
-                    <p className="text-white/80 text-lg md:text-xl leading-relaxed max-w-3xl">
+                    <p className="text-foreground text-lg md:text-xl leading-relaxed max-w-3xl">
                         Ce portfolio a été conçu pour présenter mes projets, mes compétences
                         et mon évolution en développement web/mobile.
 
@@ -64,7 +64,7 @@ export default function Portfolio() {
                     Choix techniques
                 </h2>
 
-                <p className="text-white/80 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
+                <p className="text-foreground text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
                     Conçu avec Next.js 15, Tailwind CSS et shadcn/ui, ce portfolio reflète
                     mon approche du développement : un code propre, une interface soignée
                     et une expérience utilisateur pensée sur tous les écrans.
@@ -78,11 +78,11 @@ export default function Portfolio() {
                     Arborescence du projet
                 </h2>
 
-                <p className="text-white/80 mb-10">
+                <p className="text-foreground mb-10">
                     Structure claire pour faciliter maintenance et évolution.
                 </p>
 
-                <pre className="bg-white/5 text-white/70 p-6 rounded-xl text-sm overflow-x-auto text-left">
+                <pre className="bg-white/5 text-foreground p-6 rounded-xl text-sm overflow-x-auto text-left">
                     {`portfolio-brian/
 ├── public/
 │   ├── images/
