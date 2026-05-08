@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 export default function About() {
     return (
@@ -104,68 +103,103 @@ export default function About() {
                 </p>
             </section >
 
-            {/* EXPÉRIENCES PROFESSIONNELLES */}
+            {/* EXPÉRIENCES & FORMATIONS */}
             <section className="max-w-5xl mx-auto px-4 py-16">
-                <h2 className="text-2xl text-orange-300 mb-8">Expériences professionnelles</h2>
-                <div className="relative border-l-2 border-orange-300/30 pl-8 space-y-10">
-                    {[
-                        {
-                            period: "Janvier 2026 – Mars 2026",
-                            title: "Stage Développeur Web/Mobile",
-                            company: "Association ICATY, Montpellier (34)",
-                            points: [
-                                "Création de l'application “Un jour internet”",
-                                "Conception de l'application (Merise, cahier des charges, maquettes)",
-                                "Création d'une base de données",
-                                "Outils : Flutter, Python, Flask, SQLite, GitHub, Trello, SQLAlchemy",
-                            ],
-                        },
-                        {
-                            period: "Novembre 2025 – Décembre 2025",
-                            title: "Projet de formation",
-                            company: "FondesPierre BeWeb, Montpellier (34)",
-                            points: [
-                                "Création d'un réseau social web/responsive",
-                                "Méthode agile, conception (Merise, cahier des charges, maquettes, UML)",
-                                "Outils : Symfony, Next.js, GitLab, Trello",
-                            ],
-                        },
-                        {
-                            period: "Mars 2021 – Août 2024",
-                            title: "Tailleur de pierre",
-                            company: "Carrière de Sarragan, Les Baux-de-Provence (13)",
-                            points: [
-                                "Transport et livraison des pierres",
-                                "Débitage tranches et blocs et taille sur mesure (moulure)",
-                                "Extraction des blocs",
-                            ],
-                        },
-                        {
-                            period: "Janvier 2013 – Mai 2019",
-                            title: "Tailleur de pierre",
-                            company: "LE PETIT ATELIER, Mouans-Sartoux (06)",
-                            points: [
-                                "Réalisation de travaux en pierre sur mesure pour le luxe (fontaines, cuisines, salles de bain...)",
-                                "Transport et livraison des pierres",
-                                "Débitage de tranches et blocs de pierres",
-                            ],
-                        },
-                    ].map(({ period, title, company, points }) => (
-                        <div key={period} className="relative">
-                            <div className="absolute -left-[41px] top-1 w-5 h-5 bg-orange-300 rounded-full border-4 border-[#061423]" />
-                            <p className="text-orange-300/70 text-sm font-medium mb-1">{period}</p>
-                            <h3 className="text-lg font-bold text-foreground mb-1">{title}</h3>
-                            <p className="text-foreground/60 text-sm mb-3">{company}</p>
-                            <ul className="space-y-1">
-                                {points.map((point) => (
-                                    <li key={point} className="text-foreground/80 text-base flex items-start gap-2">
-                                        <span className="text-orange-300 mt-1 shrink-0">•</span>
-                                        {point}
-                                    </li>
-                                ))}
-                            </ul>
+                <div className="grid md:grid-cols-2 gap-12">
+                    {/* Left: Expériences */}
+                    <div>
+                        <h3 className="text-xl font-bold text-orange-300/90 mb-8">Expériences</h3>
+                        <div className="relative border-l-2 border-orange-300/30 pl-8 space-y-10">
+                            {[
+                                {
+                                    period: "Janvier 2026 – Mars 2026",
+                                    title: "Stage Développeur Web/Mobile",
+                                    company: "Association ICATY, Montpellier (34)",
+                                    points: [
+                                        "Création de l'application \"Un jour internet\"",
+                                        "Conception (Merise, cahier des charges, maquettes)",
+                                        "Création d'une base de données",
+                                        "Outils : Flutter, Python, Flask, SQLite, GitHub, Trello, SQLAlchemy",
+                                    ],
+                                },
+                                {
+                                    period: "Novembre 2025 – Décembre 2025",
+                                    title: "Projet de formation",
+                                    company: "FondesPierre BeWeb, Montpellier (34)",
+                                    points: [
+                                        "Création d'un réseau social web/responsive",
+                                        "Méthode agile, conception (Merise, UML, maquettes)",
+                                        "Outils : Symfony, Next.js, GitLab, Trello",
+                                    ],
+                                },
+                                {
+                                    period: "Mars 2021 – Août 2024",
+                                    title: "Tailleur de pierre",
+                                    company: "Carrière de Sarragan, Les Baux-de-Provence (13)",
+                                    points: [
+                                        "Transport et livraison des pierres",
+                                        "Débitage tranches et blocs, taille sur mesure (moulure)",
+                                        "Extraction des blocs",
+                                    ],
+                                },
+                                {
+                                    period: "Janvier 2013 – Mai 2019",
+                                    title: "Tailleur de pierre",
+                                    company: "LE PETIT ATELIER, Mouans-Sartoux (06)",
+                                    points: [
+                                        "Travaux sur mesure pour le luxe (fontaines, cuisines, salles de bain...)",
+                                        "Transport et livraison des pierres",
+                                        "Débitage de tranches et blocs",
+                                    ],
+                                },
+                            ].map(({ period, title, company, points }) => (
+                                <div key={period} className="relative">
+                                    <div className="absolute -left-[41px] top-1 w-5 h-5 bg-orange-300 rounded-full border-4 border-[#061423]" />
+                                    <p className="text-orange-300/70 text-sm font-medium mb-1">{period}</p>
+                                    <h3 className="text-lg font-bold text-foreground mb-1">{title}</h3>
+                                    <p className="text-foreground/60 text-sm mb-3">{company}</p>
+                                    <ul className="space-y-1">
+                                        {points.map((point) => (
+                                            <li key={point} className="text-foreground/80 text-base flex items-start gap-2">
+                                                <span className="text-orange-300 mt-1 shrink-0">•</span>
+                                                {point}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            ))}
                         </div>
-                    ))}
+                    </div>
+
+                    {/* Right: Formations */}
+                    <div>
+                        <h3 className="text-xl font-bold text-orange-300/90 mb-8">Formations</h3>
+                        <div className="space-y-6">
+                            {[
+                                {
+                                    period: "Juin 2025 – Avril 2026",
+                                    title: "Développeur Full Stack",
+                                    company: "Fondespierre BeWeb, Montpellier (34)",
+                                },
+                                {
+                                    period: "Septembre 2013 – Septembre 2015",
+                                    title: "Brevet Professionnel métier de la pierre",
+                                    company: "Compagnon du Devoir, Morières-les-Avignon (84)",
+                                },
+                                {
+                                    period: "Septembre 2011 – Juillet 2013",
+                                    title: "Bac Professionnel Métier de la pierre",
+                                    company: "Lycée des Alpilles, Miramas (13)",
+                                },
+                            ].map(({ period, title, company }) => (
+                                <div key={period} className="bg-black/5 dark:bg-[#0a1e35] border border-orange-300/20 rounded-xl p-5">
+                                    <p className="text-orange-300/70 text-sm font-medium mb-1">{period}</p>
+                                    <h4 className="text-base font-bold text-foreground dark:text-foreground mb-1">{title}</h4>
+                                    <p className="text-foreground/60 dark:text-foreground/60 text-sm">{company}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </section>
 
