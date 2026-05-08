@@ -59,13 +59,8 @@ export default function Home() {
               rel="noopener noreferrer"
               className="flex items-center gap-3 hover:text-orange-300 transition"
             >
-              <Image
-                src="/images/github.png"
-                alt="GitHub"
-                width={32}
-                height={32}
-              />
-              GitHub
+              <i className="devicon-github-plain text-3xl text-black dark:text-white" />
+              GitHub Disl13
             </a>
 
             <a href="https://www.linkedin.com/in/brian-farnier-353524307/"
@@ -73,14 +68,14 @@ export default function Home() {
               rel="noopener noreferrer"
               className="flex items-center gap-3 hover:text-orange-300 transition"
             >
-              <Image
-                src="/images/linkedin.webp"
-                alt="linkedin"
-                width={27}
-                height={27}
-              />
-              LinkedIn
+              <i className="devicon-linkedin-plain text-3xl text-black dark:text-white" />
+              LinkedIn Brian Farnier
             </a>
+
+            <div className="flex items-center gap-3 ">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 text-black dark:text-white shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>
+              brian.pro1993@gmail.com
+            </div>
           </div>
         </div>
       </section >
@@ -92,9 +87,9 @@ export default function Home() {
         </h2>
         <div className="flex flex-col gap-8 items-center">
           {[
-            { label: "1 mot internet", img: "/images/logo_uji.png", href: "/projects/un-jour-internet" },
+            { label: "1 jour internet", img: "/images/logo_uji.png", href: "/projects/un-jour-internet" },
+            { label: "BreakScore", img: "/images/breakdance.jpeg", href: "/projects/breakdanet" },
             { label: "Mon Portfolio", img: "/images/portfolio-photo.jpg", href: "/projects/portfolio" },
-            { label: "Breakdanet", img: "/images/a venir.avif", href: "/projects/breakdanet" },
           ].map(({ label, img, href }) => (
             <Link
               key={label}
@@ -116,9 +111,7 @@ export default function Home() {
         <h2 className="text-2xl md:text-3xl font-bold text-orange-300 mb-12">
           COMPÉTENCES
         </h2>
-        <p className="text-foreground text-lg mb-10">
-          Je suis actuellement le plus à l'aise avec Next.js, Python, Flutter et SQLite.
-        </p>
+
         <div className="flex flex-col md:flex-row justify-center items-center gap-16 text-center">
           {[
             { title: "Front-end", icons: ["javascript", "nextjs"] },
@@ -135,7 +128,7 @@ export default function Home() {
                   <i
                     key={icon}
                     className={`devicon-${icon}-plain text-5xl ${["symfony", "github"].includes(icon)
-                      ? "text-white"
+                      ? "text-black dark:text-white"
                       : "colored"
                       }`}
                   />
@@ -146,21 +139,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CONTACT */}
-      < section className="max-w-3xl mx-auto px-4 py-16" >
-        <h2 className="text-2xl md:text-3xl font-bold text-orange-300 mb-10">
-          CONTACT
-        </h2>
-        <Link
-          href="/contact"
-          className="inline-block bg-orange-300 text-[#061423] px-6 py-2 rounded font-bold hover:bg-white transition"
-        >
-          Me contacter
-        </Link>
-      </section >
-
-
-
+      {/* PROJETS */}
+      <section className="max-w-6xl mx-auto px-4 py-16">
+        <div className="flex items-center  gap-4 flex-wrap text-lg">
+          <p>Disponible pour des opportunités Developpeur junior web/mobile ou des collaborations techniques.</p>
+          <Link
+            href="/contact"
+            className="inline-block bg-orange-300 text-[#061423] px-6 py-2 rounded font-bold hover:bg-white transition shrink-0"
+          >
+            Me contacter
+          </Link>
+        </div>
+      </section>
     </>
   );
 }

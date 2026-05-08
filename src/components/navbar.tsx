@@ -23,8 +23,9 @@ import {
 
 const projects = [
     { href: "/projects/un-jour-internet", label: "Un jour internet" },
+    { href: "/projects/breakdanet", label: "BreakScore" },
     { href: "/projects/portfolio", label: "Mon Portfolio" },
-    { href: "/projects/breakdanet", label: "Breakdanet" },
+
 ];
 
 const links = [

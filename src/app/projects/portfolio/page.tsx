@@ -12,19 +12,19 @@ export default function Portfolio() {
                     Mon Portfolio
                 </h1>
 
-                <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto">
+                <p className="text-lg md:text-xl max-w-2xl mx-auto">
                     Stack utilisée sur le projet
                 </p>
 
                 <div className="flex flex-wrap justify-center gap-3 mt-8">
-                    <span className="px-4 py-2 rounded-full bg-yellow-500/20 text-yellow-300 border border-yellow-400/30">
+                    <span className="px-4 py-2 rounded-full bg-yellow-100 dark:bg-yellow-500/20 text-yellow-800 dark:text-yellow-300 border border-yellow-300 dark:border-yellow-400/30">
                         Next.js
                     </span>
 
-                    <span className="px-4 py-2 rounded-full bg-green-500/20 text-green-300 border border-green-400/30">
+                    <span className="px-4 py-2 rounded-full bg-green-100 dark:bg-green-500/20 text-green-800 dark:text-green-300 border border-green-300 dark:border-green-400/30">
                         Tailwind
                     </span>
-                    <span className="px-4 py-2 rounded-full bg-indigo-500/20 text-green-300 border border-green-400/30">
+                    <span className="px-4 py-2 rounded-full bg-indigo-100 dark:bg-indigo-500/20 text-indigo-800 dark:text-indigo-300 border border-indigo-300 dark:border-indigo-400/30">
                         Shadcn/ui
                     </span>
                 </div>
@@ -59,8 +59,8 @@ export default function Portfolio() {
             </section>
 
             {/* CHOIX TECHNIQUES */}
-            <section className="max-w-5xl mx-auto px-4 py-16 text-center">
-                <h2 className="text-2xl md:text-3xl font-bold text-orange-300 mb-6">
+            <section className="max-w-5xl mx-auto px-4 py-16 ">
+                <h2 className="text-2xl md:text-3xl font-bold text-orange-300 mb-6 text-center">
                     Choix techniques
                 </h2>
 

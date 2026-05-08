@@ -15,15 +15,15 @@ export default function UnJourInternet() {
 
                 <div className="flex flex-wrap justify-center gap-3 mt-8">
                     {[
-                        { label: "Html / CSS / JavaScript", color: "bg-yellow-500/20 text-yellow-300 border-yellow-400/30" },
-                        { label: "Python", color: "bg-green-500/20 text-green-300 border-green-400/30" },
-                        { label: "Flask", color: "bg-emerald-500/20 text-emerald-300 border-emerald-400/30" },
-                        { label: "Flutter", color: "bg-sky-500/20 text-sky-300 border-sky-400/30" },
-                        { label: "SQLite", color: "bg-indigo-500/20 text-indigo-300 border-indigo-400/30" },
-                        { label: "Figma", color: "bg-pink-500/20 text-pink-300 border-pink-400/30" },
-                        { label: "Docker", color: "bg-orange-500/20 text-orange-300 border-orange-400/30" },
-                        { label: "Looping", color: "bg-gray-500/20 text-gray-300 border-gray-400/30" },
-                        { label: "Intégration Continue", color: "bg-red-500/20 text-red-300 border-red-400/30" },
+                        { label: "Html / CSS / JavaScript", color: "bg-yellow-100 dark:bg-yellow-500/20 text-yellow-800 dark:text-yellow-300 border-yellow-300 dark:border-yellow-400/30" },
+                        { label: "Python", color: "bg-green-100 dark:bg-green-500/20 text-green-800 dark:text-green-300 border-green-300 dark:border-green-400/30" },
+                        { label: "Flask", color: "bg-emerald-100 dark:bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 border-emerald-300 dark:border-emerald-400/30" },
+                        { label: "Flutter", color: "bg-sky-100 dark:bg-sky-500/20 text-sky-800 dark:text-sky-300 border-sky-300 dark:border-sky-400/30" },
+                        { label: "SQLite", color: "bg-indigo-100 dark:bg-indigo-500/20 text-indigo-800 dark:text-indigo-300 border-indigo-300 dark:border-indigo-400/30" },
+                        { label: "Figma", color: "bg-pink-100 dark:bg-pink-500/20 text-pink-800 dark:text-pink-300 border-pink-300 dark:border-pink-400/30" },
+                        { label: "Docker", color: "bg-orange-100 dark:bg-orange-500/20 text-orange-800 dark:text-orange-300 border-orange-300 dark:border-orange-400/30" },
+                        { label: "Looping", color: "bg-gray-100 dark:bg-gray-500/20 text-gray-800 dark:text-gray-300 border-gray-300 dark:border-gray-400/30" },
+                        { label: "Intégration Continue", color: "bg-red-100 dark:bg-red-500/20 text-red-800 dark:text-red-300 border-red-300 dark:border-red-400/30" },
                     ].map(({ label, color }) => (
                         <span key={label} className={`px-4 py-2 rounded-full border text-sm md:text-base ${color}`}>
                             {label}
@@ -88,17 +88,17 @@ export default function UnJourInternet() {
                         {
                             title: "Front-end mobile (pour les utilisateurs)",
                             desc: "Destiné aux utilisateurs, il permet de consulter le mot du jour, d'accéder aux anciens mots, de choisir l'heure des notifications et de contacter ICATY.",
-                            badge: { label: "Flutter", color: "bg-sky-500/20 text-sky-300 border-sky-400/30" },
+                            badge: { label: "Flutter", color: "bg-sky-100 dark:bg-sky-500/20 text-sky-800 dark:text-sky-300 border-sky-300 dark:border-sky-400/30" },
                         },
                         {
                             title: "Back-office web (pour les administrateurs)",
                             desc: "Interface réservée aux administrateurs authentifiés, permettant la gestion des mots, des comptes administrateurs ainsi que l'accès aux statistiques.",
-                            badge: { label: "Html / CSS / JavaScript", color: "bg-yellow-500/20 text-yellow-300 border-yellow-400/30" },
+                            badge: { label: "Html / CSS / JavaScript", color: "bg-yellow-100 dark:bg-yellow-500/20 text-yellow-800 dark:text-yellow-300 border-yellow-300 dark:border-yellow-400/30" },
                         },
                         {
                             title: "Back-end & base de données",
                             desc: "Le back-end gère la logique métier, le traitement des requêtes et la communication avec la base de données.",
-                            badge: { label: "Python · Flask · SQLite", color: "bg-green-500/20 text-green-300 border-green-400/30" },
+                            badge: { label: "Python · Flask · SQLite", color: "bg-green-100 dark:bg-green-500/20 text-green-800 dark:text-green-300 border-green-300 dark:border-green-400/30" },
                         },
                     ].map(({ title, desc, badge }) => (
                         <div key={title}>

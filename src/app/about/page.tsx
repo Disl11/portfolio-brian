@@ -13,24 +13,6 @@ export default function About() {
                     Développeur web/mobile junior, basé à Montpellier.
                 </p>
 
-                <div className="flex flex-wrap justify-center gap-3 mt-8">
-                    {[
-                        { label: "Python", color: "bg-blue-500/20 text-blue-300 border-blue-400/30" },
-                        { label: "Next.js", color: "bg-gray-500/20 text-gray-300 border-gray-400/30" },
-                        { label: "JavaScript", color: "bg-yellow-500/20 text-yellow-300 border-yellow-400/30" },
-                        { label: "Java (bases)", color: "bg-red-500/20 text-red-300 border-red-400/30" },
-                        { label: "Docker", color: "bg-sky-500/20 text-sky-300 border-sky-400/30" },
-                        { label: "Flutter", color: "bg-purple-500/20 text-purple-300 border-purple-400/30" },
-                    ].map(({ label, color }) => (
-                        <span
-                            key={label}
-                            className={`px-4 py-2 rounded-full border text-sm md:text-base ${color}`}
-                        >
-                            {label}
-                        </span>
-                    ))}
-                </div>
-
 
                 <a href="/CV_Brian_Farnier.pdf"
                     download
@@ -40,6 +22,35 @@ export default function About() {
                 </a>
             </section >
 
+            {/* COMPÉTENCES */}
+            <section className="max-w-5xl mx-auto px-4 py-10">
+
+                <div className="flex flex-col md:flex-row justify-center items-center gap-16 text-center">
+                    {[
+                        { title: "Front-end", icons: ["javascript", "nextjs"] },
+                        { title: "Back-end", icons: ["nodejs", "symfony", "python"] },
+                        { title: "Mobile", icons: ["flutter"] },
+                        { title: "Database", icons: ["mysql", "sqlite"] },
+                        { title: "Versioning", icons: ["git", "github"] },
+                        { title: "Conteneurisation", icons: ["docker"] },
+                    ].map(({ title, icons }) => (
+                        <div key={title}>
+                            <h3 className="mb-6 font-bold text-xl">{title}</h3>
+                            <div className="flex justify-center gap-6">
+                                {icons.map((icon) => (
+                                    <i
+                                        key={icon}
+                                        className={`devicon-${icon}-plain text-5xl ${["symfony", "github"].includes(icon)
+                                            ? "text-black dark:text-white"
+                                            : "colored"
+                                            }`}
+                                    />
+                                ))}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </section>
             {/* PARCOURS */}
             < section className="max-w-5xl mx-auto px-4 py-10" >
                 <h2 className="text-2xl text-orange-300 mb-6">Mon parcours</h2>
@@ -61,6 +72,8 @@ export default function About() {
                     et développe mes compétences à travers des projets.
                 </p>
             </section >
+
+
 
             {/* MÉTHODE */}
             < section className="max-w-5xl mx-auto px-4 py-10" >
@@ -91,6 +104,71 @@ export default function About() {
                 </p>
             </section >
 
+            {/* EXPÉRIENCES PROFESSIONNELLES */}
+            <section className="max-w-5xl mx-auto px-4 py-16">
+                <h2 className="text-2xl text-orange-300 mb-8">Expériences professionnelles</h2>
+                <div className="relative border-l-2 border-orange-300/30 pl-8 space-y-10">
+                    {[
+                        {
+                            period: "Janvier 2026 – Mars 2026",
+                            title: "Stage Développeur Web/Mobile",
+                            company: "Association ICATY, Montpellier (34)",
+                            points: [
+                                "Création de l'application “Un jour internet”",
+                                "Conception de l'application (Merise, cahier des charges, maquettes)",
+                                "Création d'une base de données",
+                                "Outils : Flutter, Python, Flask, SQLite, GitHub, Trello, SQLAlchemy",
+                            ],
+                        },
+                        {
+                            period: "Novembre 2025 – Décembre 2025",
+                            title: "Projet de formation",
+                            company: "FondesPierre BeWeb, Montpellier (34)",
+                            points: [
+                                "Création d'un réseau social web/responsive",
+                                "Méthode agile, conception (Merise, cahier des charges, maquettes, UML)",
+                                "Outils : Symfony, Next.js, GitLab, Trello",
+                            ],
+                        },
+                        {
+                            period: "Mars 2021 – Août 2024",
+                            title: "Tailleur de pierre",
+                            company: "Carrière de Sarragan, Les Baux-de-Provence (13)",
+                            points: [
+                                "Transport et livraison des pierres",
+                                "Débitage tranches et blocs et taille sur mesure (moulure)",
+                                "Extraction des blocs",
+                            ],
+                        },
+                        {
+                            period: "Janvier 2013 – Mai 2019",
+                            title: "Tailleur de pierre",
+                            company: "LE PETIT ATELIER, Mouans-Sartoux (06)",
+                            points: [
+                                "Réalisation de travaux en pierre sur mesure pour le luxe (fontaines, cuisines, salles de bain...)",
+                                "Transport et livraison des pierres",
+                                "Débitage de tranches et blocs de pierres",
+                            ],
+                        },
+                    ].map(({ period, title, company, points }) => (
+                        <div key={period} className="relative">
+                            <div className="absolute -left-[41px] top-1 w-5 h-5 bg-orange-300 rounded-full border-4 border-[#061423]" />
+                            <p className="text-orange-300/70 text-sm font-medium mb-1">{period}</p>
+                            <h3 className="text-lg font-bold text-foreground mb-1">{title}</h3>
+                            <p className="text-foreground/60 text-sm mb-3">{company}</p>
+                            <ul className="space-y-1">
+                                {points.map((point) => (
+                                    <li key={point} className="text-foreground/80 text-base flex items-start gap-2">
+                                        <span className="text-orange-300 mt-1 shrink-0">•</span>
+                                        {point}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
             {/* HOBBIES */}
             <section className="max-w-5xl mx-auto px-4 py-16">
                 <h2 className="text-2xl text-orange-300 mb-6">Hobbies</h2>
@@ -103,7 +181,7 @@ export default function About() {
                         ].map((hobby) => (
                             <span
                                 key={hobby}
-                                className="px-4 py-2 rounded-full bg-white/10 text-foreground border border-white/10"
+                                className="px-4 py-2 rounded-full bg-black/5 dark:bg-white/10 text-foreground border border-black/10 dark:border-white/10"
                             >
                                 {hobby}
                             </span>
