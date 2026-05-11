@@ -1,6 +1,22 @@
+"use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function About() {
+    const container = {
+        hidden: {},
+        show: {
+            transition: {
+                staggerChildren: 0.15,
+            },
+        },
+    };
+
+    const item = {
+        hidden: { opacity: 0, x: 60, scale: 0.95, filter: "blur(4px)" },
+        show: { opacity: 1, x: 0, scale: 1, filter: "blur(0px)" }
+    };
+
     return (
         <>
             {/* HERO */}
@@ -22,9 +38,15 @@ export default function About() {
             </section >
 
             {/* COMPÉTENCES */}
-            <section className="max-w-5xl mx-auto px-4 py-10">
-
+            <motion.section
+                className="max-w-5xl mx-auto px-4 py-10"
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={container}
+            >
                 <div className="flex flex-col md:flex-row justify-center items-center gap-16 text-center">
+
                     {[
                         { title: "Front-end", icons: ["javascript", "nextjs"] },
                         { title: "Back-end", icons: ["nodejs", "symfony", "python"] },
@@ -33,8 +55,9 @@ export default function About() {
                         { title: "Versioning", icons: ["git", "github"] },
                         { title: "Conteneurisation", icons: ["docker"] },
                     ].map(({ title, icons }) => (
-                        <div key={title}>
+                        <motion.div key={title} variants={item}>
                             <h3 className="mb-6 font-bold text-xl">{title}</h3>
+
                             <div className="flex justify-center gap-6">
                                 {icons.map((icon) => (
                                     <i
@@ -46,10 +69,11 @@ export default function About() {
                                     />
                                 ))}
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
+
                 </div>
-            </section>
+            </motion.section>
             {/* PARCOURS */}
             <section className="max-w-5xl mx-auto px-4 py-10">
                 <h2 className="text-2xl dark:text-orange-300 text-orange-700 mb-6">

@@ -1,13 +1,31 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 
 export default function Home() {
+  const container = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, x: 60, scale: 0.95, filter: "blur(4px)" },
+    show: { opacity: 1, x: 0, scale: 1, filter: "blur(0px)" }
+  };
   return (
     <>
 
       {/* HERO */}
-      <section className="max-w-6xl mx-auto px-4 py-8">
+      <motion.section initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="max-w-6xl mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row gap-15">
           <div className="w-40 h-40 md:w-52 md:h-52 rounded-[40px_100px_20px_100px] overflow-hidden relative shrink-0">
             <Image
@@ -26,7 +44,7 @@ export default function Home() {
           </h1>
 
         </div>
-      </section>
+      </motion.section>
 
       {/* À PROPOS */}
       <section className="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-3 gap-15">
@@ -108,12 +126,15 @@ export default function Home() {
       </section>
 
       {/* COMPÉTENCES */}
-      <section className="max-w-6xl mx-auto px-4 py-16">
-        <h2 className="text-2xl md:text-3xl font-bold dark:text-orange-300 text-orange-700 mb-12">
-          COMPÉTENCES
-        </h2>
-
+      <motion.section
+        className="max-w-5xl mx-auto px-4 py-10"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={container}
+      >
         <div className="flex flex-col md:flex-row justify-center items-center gap-16 text-center">
+
           {[
             { title: "Front-end", icons: ["javascript", "nextjs"] },
             { title: "Back-end", icons: ["nodejs", "symfony", "python"] },
@@ -122,8 +143,9 @@ export default function Home() {
             { title: "Versioning", icons: ["git", "github"] },
             { title: "Conteneurisation", icons: ["docker"] },
           ].map(({ title, icons }) => (
-            <div key={title}>
+            <motion.div key={title} variants={item}>
               <h3 className="mb-6 font-bold text-xl">{title}</h3>
+
               <div className="flex justify-center gap-6">
                 {icons.map((icon) => (
                   <i
@@ -135,10 +157,11 @@ export default function Home() {
                   />
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
+
         </div>
-      </section>
+      </motion.section>
 
       {/* PROJETS */}
       <section className="max-w-6xl mx-auto px-4 py-16">
