@@ -6,11 +6,11 @@ export default function UnJourInternet() {
         <>
             {/* HERO */}
             <section className="max-w-5xl mx-auto px-4 py-10 text-center">
-                <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                <h1 className="text-4xl  dark:text-orange-300 text-orange-700 md:text-6xl font-bold mb-6">
                     Un jour internet
                 </h1>
                 <p className="text-lg md:text-xl text-foreground max-w-2xl mx-auto">
-                    Stack utilisée sur le projet
+                    Stack & outils techniques
                 </p>
 
                 <div className="flex flex-wrap justify-center gap-3 mt-8">
@@ -34,20 +34,18 @@ export default function UnJourInternet() {
 
             {/* LE PROJET */}
             <section className="max-w-6xl mx-auto px-4 py-10">
-                <h2 className="text-2xl md:text-3xl font-bold text-orange-300 mb-6">
+                <h2 className="text-2xl md:text-3xl font-bold dark:text-orange-300 text-orange-700 mb-6">
                     Le projet
                 </h2>
                 <div className="flex flex-col md:flex-row items-center gap-10">
                     <p className="text-foreground text-lg md:text-xl leading-relaxed max-w-3xl">
-                        Lors de mon stage au sein de l'association ICATY, j'ai participé au développement
-                        d'une application mobile et web complète dans un contexte réel de situation
-                        client/développeur. Ma mission principale était de concevoir l'application
-                        « Un jour internet », de la conception jusqu'au déploiement. J'ai travaillé sur
-                        le back-end avec la création d'une API et la gestion de la base de données, ainsi
-                        que sur le front-end mobile et le back-office web destiné aux administrateurs.
-                        Cette application a pour objectif de sensibiliser les personnes âgées aux usages
-                        du numérique et de renforcer leur sécurité en ligne. Elle propose un mot par jour,
-                        accompagné d'une explication simple et accessible.
+                        Lors de mon stage au sein l'association ICATY, j’ai développé une application mobile gratuite et éducative nommée « Un jour internet », destinée à renforcer les connaissances des personnes âgées sur l’utilisation d’internet.
+
+                        L’application propose chaque jour un mot ou une notion liée au numérique, expliquée simplement et de manière progressive, afin d’aider les seniors à mieux comprendre le web, à enrichir leurs connaissances et à naviguer avec plus de confiance.
+
+                        À travers cet apprentissage quotidien, l’application vise à réduire la vulnérabilité des utilisateurs face aux menaces numériques, tout en renforçant leur autonomie, leur vigilance et leur confiance.
+
+                        L’application est conçue dans le respect de la vie privée des utilisateurs. Aucune donnée personnelle n’est stockée, garantissant une utilisation sécurisée et anonyme, sans risque de fuite d’informations.
                     </p>
                     <div className="relative w-full max-w-sm h-64 rounded-xl overflow-hidden">
                         <Image
@@ -61,9 +59,61 @@ export default function UnJourInternet() {
                 </div>
             </section>
 
+            {/* MES MISSIONS */}
+            <section className="max-w-6xl mx-auto px-4 py-10">
+                <h2 className="text-2xl md:text-3xl font-bold dark:text-orange-300 text-orange-700 mb-8">
+                    Mes missions
+                </h2>
+
+                <div className="grid md:grid-cols-2 gap-6">
+
+                    <div className="bg-white dark:bg-[#0a1e35] border border-slate-200 dark:border-orange-300/20 rounded-xl p-6">
+                        <h3 className="text-xl font-semibold mb-3 text-orange-700 dark:text-orange-300">
+                            Back-end
+                        </h3>
+
+                        <p className="text-foreground leading-relaxed">
+                            Développement d’une API avec Flask, gestion des routes,
+                            traitement des données et interaction avec une base SQLite.
+                        </p>
+                    </div>
+
+                    <div className="bg-white dark:bg-[#0a1e35] border border-slate-200 dark:border-orange-300/20 rounded-xl p-6">
+                        <h3 className="text-xl font-semibold mb-3 text-orange-700 dark:text-orange-300">
+                            Application mobile
+                        </h3>
+
+                        <p className="text-foreground leading-relaxed">
+                            Développement de l’interface mobile avec Flutter, en mettant l’accent sur l’accessibilité (RGAA), la lisibilité et des fonctionnalités adaptées au public cible.
+                        </p>
+                    </div>
+
+                    <div className="bg-white dark:bg-[#0a1e35] border border-slate-200 dark:border-orange-300/20 rounded-xl p-6">
+                        <h3 className="text-xl font-semibold mb-3 text-orange-700 dark:text-orange-300">
+                            Back-office web
+                        </h3>
+
+                        <p className="text-foreground leading-relaxed">
+                            Développement d’un back-office administrateur en HTML, CSS et JavaScript permettant la gestion du contenu via des opérations CRUD ainsi que le suivi des statistiques de l’application.
+                        </p>
+                    </div>
+
+                    <div className="bg-white dark:bg-[#0a1e35] border border-slate-200 dark:border-orange-300/20 rounded-xl p-6">
+                        <h3 className="text-xl font-semibold mb-3 text-orange-700 dark:text-orange-300">
+                            Outils & organisation
+                        </h3>
+
+                        <p className="text-foreground leading-relaxed">
+                            Mise en place d’un workflow de développement utilisant Git pour le versioning, Docker pour l’environnement de développement et l’intégration continue, ainsi que Figma pour l’intégration des interfaces et maquettes UI.
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+
             {/* ARCHITECTURE */}
             <section className="max-w-5xl mx-auto px-4 py-16">
-                <h2 className="text-2xl md:text-3xl font-bold text-orange-300 mb-6">
+                <h2 className="text-2xl md:text-3xl font-bold dark:text-orange-300 text-orange-700 mb-6">
                     Architecture de l'application
                 </h2>
                 <p className="text-foreground text-lg md:text-xl leading-relaxed mb-10">
@@ -114,7 +164,7 @@ export default function UnJourInternet() {
                 </div>
 
                 <div className="mt-12">
-                    <h3 className="text-xl font-bold text-orange-300 mb-4">
+                    <h3 className="text-xl font-bold dark:text-orange-300 text-orange-700 mb-4">
                         Fonctionnalités principales
                     </h3>
                     <ul className="list-disc list-inside space-y-2 text-foreground">
@@ -135,7 +185,7 @@ export default function UnJourInternet() {
 
             {/* APERÇU */}
             <section className="max-w-6xl mx-auto px-4 py-16">
-                <h2 className="text-2xl md:text-3xl font-bold text-orange-300 mb-6 text-center">
+                <h2 className="text-2xl md:text-3xl font-bold dark:text-orange-300 text-orange-700 mb-6 text-center">
                     Aperçu de l'application (côté utilisateur)
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -155,7 +205,7 @@ export default function UnJourInternet() {
 
             {/* CONCEPTION */}
             <section className="max-w-6xl mx-auto px-4 py-16">
-                <h2 className="text-2xl md:text-3xl font-bold text-orange-300 mb-6 text-center">
+                <h2 className="text-2xl md:text-3xl font-bold dark:text-orange-300 text-orange-700 mb-6 text-center">
                     Conception & architecture technique
                 </h2>
                 <div className="space-y-10 text-foreground text-lg md:text-xl leading-relaxed max-w-4xl mx-auto">

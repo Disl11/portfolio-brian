@@ -1,4 +1,4 @@
-
+import Link from "next/link";
 
 export default function Breakdanet() {
     return (
@@ -7,7 +7,7 @@ export default function Breakdanet() {
 
             {/* HERO */}
             <section className="max-w-5xl mx-auto px-4 py-10 text-center">
-                <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                <h1 className="text-4xl md:text-6xl dark:text-orange-300 text-orange-700 font-bold mb-6">
                     BreakScore
                 </h1>
 
@@ -36,7 +36,7 @@ export default function Breakdanet() {
 
             {/* PROJET */}
             <section className="max-w-6xl mx-auto px-4 py-10">
-                <h2 className="text-2xl md:text-3xl font-bold text-orange-300 mb-10">
+                <h2 className="text-2xl md:text-3xl font-bold dark:text-orange-300 text-orange-700 mb-10">
                     Le projet
                 </h2>
 
@@ -60,7 +60,7 @@ export default function Breakdanet() {
 
             {/* OBJECTIFS */}
             <section className="max-w-5xl mx-auto px-4 py-16 ">
-                <h2 className="text-2xl md:text-3xl font-bold text-orange-300 mb-6">
+                <h2 className="text-2xl md:text-3xl font-bold dark:text-orange-300 text-orange-700 mb-6">
                     Objectifs
                 </h2>
 
@@ -75,7 +75,7 @@ export default function Breakdanet() {
 
             {/* EVOLUTION */}
             <section className="max-w-5xl mx-auto px-4 py-16 ">
-                <h2 className="text-2xl md:text-3xl font-bold text-orange-300 mb-6">
+                <h2 className="text-2xl md:text-3xl font-bold dark:text-orange-300 text-orange-700 mb-6">
                     Évolution du projet
                 </h2>
 
@@ -84,6 +84,16 @@ export default function Breakdanet() {
                     Au programme : nouveaux modes de jeu en solo et en groupe, pour enrichir l'expérience sans jamais perdre l'essentiel — jouer, s'affronter, progresser.
                 </p>
             </section>
+
+            {/* RETOUR */}
+            <div className="max-w-5xl mx-auto px-4 pb-16">
+                <Link
+                    href="/"
+                    className="inline-block bg-orange-300 text-[#061423] px-6 py-2 rounded-lg font-bold hover:bg-white transition"
+                >
+                    ← Retour page principale
+                </Link>
+            </div>
         </div>
 
     );

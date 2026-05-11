@@ -20,7 +20,7 @@ export default function Home() {
           </div>
           <h1 className="text-4xl md:text-6xl font-serif leading-tight py-5">
             Brian Farnier <br />
-            <span className="text-3xl md:text-4xl font-bold text-orange-300">
+            <span className="text-3xl md:text-4xl font-bold dark:text-orange-300 text-orange-700">
               Développeur Fullstack
             </span>
           </h1>
@@ -31,14 +31,15 @@ export default function Home() {
       {/* À PROPOS */}
       <section className="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-3 gap-15">
         <div className="md:col-span-2">
-          <h2 className="text-2xl md:text-3xl font-bold text-orange-300 mb-10">
+          <h2 className="text-2xl md:text-3xl font-bold dark:text-orange-300 text-orange-700 mb-10">
             À PROPOS
           </h2>
+          <p className="text-foreground text-lg md:text-xl leading-relaxed mb-4">
+            Mon expérience en tant que tailleur de pierre m’a apporté une rigueur technique et une autonomie solides dans la réalisation de projets exigeants. Cette culture du travail précis et structuré m’a conduit vers le développement, un domaine dans lequel je retrouve les mêmes exigences de logique, de résolution de problèmes et de construction, appliquées cette fois au numérique.
+          </p>
+
           <p className="text-foreground text-lg md:text-xl leading-relaxed mb-6">
-            Après 12 ans d'expérience en tant que tailleur de pierre, j'ai entamé
-            une reconversion dans le développement web et mobile et je suis
-            aujourd'hui développeur fullstack junior. Motivé et curieux, je cherche
-            à mettre mes compétences à profit tout en continuant à apprendre.
+            Aujourd’hui développeur fullstack junior, je développe des projets avec des technologies comme MERN et Flutter, à travers différentes expériences pratiques qui m’ont permis de concevoir et réaliser des applications de bout en bout.
           </p>
           <Link
             href="/about"
@@ -49,7 +50,7 @@ export default function Home() {
         </div>
 
         <div>
-          <h3 className="text-2xl md:text-3xl font-bold text-orange-300 mb-10">
+          <h3 className="text-2xl md:text-3xl font-bold dark:text-orange-300 text-orange-700 mb-10">
             RÉSEAUX
           </h3>
           <div className="space-y-4">
@@ -60,7 +61,7 @@ export default function Home() {
               className="flex items-center gap-3 hover:text-orange-300 transition"
             >
               <i className="devicon-github-plain text-3xl text-black dark:text-white" />
-              GitHub Disl13
+              GitHub Disl11
             </a>
 
             <a href="https://www.linkedin.com/in/brian-farnier-353524307/"
@@ -82,7 +83,7 @@ export default function Home() {
 
       {/* PROJETS */}
       <section className="max-w-6xl mx-auto px-4 py-16">
-        <h2 className="text-2xl md:text-3xl font-bold text-orange-300 mb-10">
+        <h2 className="text-2xl md:text-3xl font-bold dark:text-orange-300 text-orange-700 mb-10">
           PROJETS
         </h2>
         <div className="flex flex-col gap-8 items-center">
@@ -108,7 +109,7 @@ export default function Home() {
 
       {/* COMPÉTENCES */}
       <section className="max-w-6xl mx-auto px-4 py-16">
-        <h2 className="text-2xl md:text-3xl font-bold text-orange-300 mb-12">
+        <h2 className="text-2xl md:text-3xl font-bold dark:text-orange-300 text-orange-700 mb-12">
           COMPÉTENCES
         </h2>
 

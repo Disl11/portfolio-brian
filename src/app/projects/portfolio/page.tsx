@@ -8,7 +8,7 @@ export default function Portfolio() {
 
             {/* HERO */}
             <section className="max-w-5xl mx-auto px-4 py-10 text-center">
-                <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                <h1 className="text-4xl dark:text-orange-300 text-orange-700 md:text-6xl font-bold mb-6">
                     Mon Portfolio
                 </h1>
 
@@ -32,7 +32,7 @@ export default function Portfolio() {
 
             {/* PROJET */}
             <section className="max-w-6xl mx-auto px-4 py-10">
-                <h2 className="text-2xl md:text-3xl font-bold text-orange-300 mb-10">
+                <h2 className="text-2xl md:text-3xl font-bold dark:text-orange-300 text-orange-700 mb-10">
                     Le projet
                 </h2>
 
@@ -60,7 +60,7 @@ export default function Portfolio() {
 
             {/* CHOIX TECHNIQUES */}
             <section className="max-w-5xl mx-auto px-4 py-16 ">
-                <h2 className="text-2xl md:text-3xl font-bold text-orange-300 mb-6 text-center">
+                <h2 className="text-2xl md:text-3xl font-bold dark:text-orange-300 text-orange-700 mb-6 text-center">
                     Choix techniques
                 </h2>
 
@@ -74,7 +74,7 @@ export default function Portfolio() {
 
             {/* ARBORESCENCE */}
             <section className="max-w-5xl mx-auto px-4 py-16 text-center">
-                <h2 className="text-2xl md:text-3xl font-bold text-orange-300 mb-6">
+                <h2 className="text-2xl md:text-3xl font-bold dark:text-orange-300 text-orange-700 mb-6">
                     Arborescence du projet
                 </h2>
 
@@ -110,6 +110,15 @@ export default function Portfolio() {
         └── theme-provider.tsx`}
                 </pre>
             </section>
+            {/* RETOUR */}
+            <div className="max-w-5xl mx-auto px-4 pb-16">
+                <Link
+                    href="/"
+                    className="inline-block bg-orange-300 text-[#061423] px-6 py-2 rounded-lg font-bold hover:bg-white transition"
+                >
+                    ← Retour page principale
+                </Link>
+            </div>
         </main>
     );
 }
