@@ -74,32 +74,74 @@ export default function Home() {
           <h3 className="text-2xl md:text-3xl font-bold dark:text-orange-300 text-orange-700 mb-10">
             RÉSEAUX
           </h3>
+
           <div className="space-y-4">
-
-            <a href="https://github.com/Disl11"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 hover:text-orange-300 transition"
-            >
-              <i className="devicon-github-plain text-3xl text-black dark:text-white" />
-              GitHub Disl11
-            </a>
-
-            <a href="https://www.linkedin.com/in/brian-farnier-353524307/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 hover:text-orange-300 transition"
-            >
-              <i className="devicon-linkedin-plain text-3xl text-black dark:text-white" />
-              LinkedIn Brian Farnier
-            </a>
-
-            <div className="flex items-center gap-3 ">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 text-black dark:text-white shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>
-              brian.pro1993@gmail.com
-            </div>
+            {[
+              {
+                type: "link",
+                href: "https://github.com/Disl11",
+                icon: <i className="devicon-github-plain text-3xl text-black dark:text-white" />,
+                text: "GitHub Disl11",
+              },
+              {
+                type: "link",
+                href: "https://www.linkedin.com/in/brian-farnier-353524307/",
+                icon: <i className="devicon-linkedin-plain text-3xl text-black dark:text-white" />,
+                text: "LinkedIn Brian Farnier",
+              },
+              {
+                type: "text",
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 text-black dark:text-white shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                  </svg>
+                ),
+                text: "brian.pro1993@gmail.com",
+              },
+              {
+                type: "text",
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 text-black dark:text-white shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.89.33 1.76.63 2.6a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.48-1.15a2 2 0 0 1 2.11-.45c.84.3 1.71.51 2.6.63A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                ),
+                text: "07 87 06 06 65",
+              },
+            ].map((item, index) => (
+              <motion.div
+                key={item.text}
+                initial={{ opacity: 0, x: 80 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.2,
+                  ease: "easeOut",
+                }}
+              >
+                {item.type === "link" ? (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 hover:text-orange-300 transition"
+                  >
+                    {item.icon}
+                    {item.text}
+                  </a>
+                ) : (
+                  <div className="flex items-center gap-3">
+                    {item.icon}
+                    {item.text}
+                  </div>
+                )}
+              </motion.div>
+            ))}
           </div>
         </div>
+
+
       </motion.section >
 
       {/* PROJETS */}

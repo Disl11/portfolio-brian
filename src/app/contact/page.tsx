@@ -73,6 +73,16 @@ export default function Contact() {
       label: "LinkedIn",
       value: "brian-farnier-353524307",
     },
+    {
+      href: "tel:+33612345678",
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className="text-orange-300">
+          <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1C10.07 21 3 13.93 3 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z" />
+        </svg>
+      ),
+      label: "Téléphone",
+      value: "07 87 06 06 65",
+    }
   ];
 
   return (
@@ -99,7 +109,7 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {contacts.map(({ href, icon, label, value }, index) => (
             <motion.a
               key={label}
