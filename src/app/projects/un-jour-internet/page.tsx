@@ -1,14 +1,23 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function UnJourInternet() {
     return (
         <>
             {/* HERO */}
-            <section className="max-w-5xl mx-auto px-4 py-10 text-center">
-                <h1 className="text-4xl  dark:text-orange-300 text-orange-700 md:text-6xl font-bold mb-6">
+            <motion.section
+                className="max-w-5xl mx-auto px-4 py-10 text-center"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+            >
+                <h1 className="text-4xl dark:text-orange-300 text-orange-700 md:text-6xl font-bold mb-6">
                     Un jour internet
                 </h1>
+
                 <p className="text-lg md:text-xl text-foreground max-w-2xl mx-auto">
                     Stack & outils techniques
                 </p>
@@ -24,16 +33,30 @@ export default function UnJourInternet() {
                         { label: "Docker", color: "bg-orange-100 dark:bg-orange-500/20 text-orange-800 dark:text-orange-300 border-orange-300 dark:border-orange-400/30" },
                         { label: "Looping", color: "bg-gray-100 dark:bg-gray-500/20 text-gray-800 dark:text-gray-300 border-gray-300 dark:border-gray-400/30" },
                         { label: "Intégration Continue", color: "bg-red-100 dark:bg-red-500/20 text-red-800 dark:text-red-300 border-red-300 dark:border-red-400/30" },
-                    ].map(({ label, color }) => (
-                        <span key={label} className={`px-4 py-2 rounded-full border text-sm md:text-base ${color}`}>
+                    ].map(({ label, color }, index) => (
+                        <motion.span
+                            key={label}
+                            initial={{ opacity: 0, x: 100 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{
+                                duration: 0.5,
+                                delay: 0.5 + index * 0.2,
+                                ease: "easeOut",
+                            }}
+                            className={`px-4 py-2 rounded-full border text-sm md:text-base ${color}`}
+                        >
                             {label}
-                        </span>
+                        </motion.span>
                     ))}
                 </div>
-            </section>
+            </motion.section>
 
             {/* LE PROJET */}
-            <section className="max-w-6xl mx-auto px-4 py-10">
+            <motion.section className="max-w-6xl mx-auto px-4 py-10" initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}>
                 <h2 className="text-2xl md:text-3xl font-bold dark:text-orange-300 text-orange-700 mb-6">
                     Le projet
                 </h2>
@@ -57,62 +80,74 @@ export default function UnJourInternet() {
                         />
                     </div>
                 </div>
-            </section>
+            </motion.section>
 
             {/* MES MISSIONS */}
-            <section className="max-w-6xl mx-auto px-4 py-10">
+            <motion.section
+                className="max-w-6xl mx-auto px-4 py-10"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+            >
                 <h2 className="text-2xl md:text-3xl font-bold dark:text-orange-300 text-orange-700 mb-8">
                     Mes missions
                 </h2>
 
                 <div className="grid md:grid-cols-2 gap-6">
+                    {[
+                        {
+                            title: "Back-end",
+                            text: "Développement d’une API avec Flask, gestion des routes, traitement des données et interaction avec une base SQLite.",
+                        },
+                        {
+                            title: "Application mobile",
+                            text: "Développement de l’interface mobile avec Flutter, en mettant l’accent sur l’accessibilité (RGAA), la lisibilité et des fonctionnalités adaptées au public cible.",
+                        },
+                        {
+                            title: "Back-office web",
+                            text: "Développement d’un back-office administrateur en HTML, CSS et JavaScript permettant la gestion du contenu via des opérations CRUD ainsi que le suivi des statistiques de l’application.",
+                        },
+                        {
+                            title: "Outils & organisation",
+                            text: "Mise en place d’un workflow de développement utilisant Git pour le versioning, Docker pour l’environnement de développement et l’intégration continue, ainsi que Figma pour l’intégration des interfaces et maquettes UI.",
+                        },
+                    ].map(({ title, text }, index) => (
+                        <motion.div
+                            key={title}
+                            initial={{
+                                opacity: 0,
+                                x: index % 2 === 0 ? -100 : 100,
+                            }}
+                            whileInView={{
+                                opacity: 1,
+                                x: 0,
+                            }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{
+                                duration: 0.7,
+                                delay: index * 0.2,
+                                ease: "easeOut",
+                            }}
+                            className="bg-white dark:bg-[#0a1e35] border border-slate-200 dark:border-orange-300/20 rounded-xl p-6"
+                        >
+                            <h3 className="text-xl font-semibold mb-3 text-orange-700 dark:text-orange-300">
+                                {title}
+                            </h3>
 
-                    <div className="bg-white dark:bg-[#0a1e35] border border-slate-200 dark:border-orange-300/20 rounded-xl p-6">
-                        <h3 className="text-xl font-semibold mb-3 text-orange-700 dark:text-orange-300">
-                            Back-end
-                        </h3>
-
-                        <p className="text-foreground leading-relaxed">
-                            Développement d’une API avec Flask, gestion des routes,
-                            traitement des données et interaction avec une base SQLite.
-                        </p>
-                    </div>
-
-                    <div className="bg-white dark:bg-[#0a1e35] border border-slate-200 dark:border-orange-300/20 rounded-xl p-6">
-                        <h3 className="text-xl font-semibold mb-3 text-orange-700 dark:text-orange-300">
-                            Application mobile
-                        </h3>
-
-                        <p className="text-foreground leading-relaxed">
-                            Développement de l’interface mobile avec Flutter, en mettant l’accent sur l’accessibilité (RGAA), la lisibilité et des fonctionnalités adaptées au public cible.
-                        </p>
-                    </div>
-
-                    <div className="bg-white dark:bg-[#0a1e35] border border-slate-200 dark:border-orange-300/20 rounded-xl p-6">
-                        <h3 className="text-xl font-semibold mb-3 text-orange-700 dark:text-orange-300">
-                            Back-office web
-                        </h3>
-
-                        <p className="text-foreground leading-relaxed">
-                            Développement d’un back-office administrateur en HTML, CSS et JavaScript permettant la gestion du contenu via des opérations CRUD ainsi que le suivi des statistiques de l’application.
-                        </p>
-                    </div>
-
-                    <div className="bg-white dark:bg-[#0a1e35] border border-slate-200 dark:border-orange-300/20 rounded-xl p-6">
-                        <h3 className="text-xl font-semibold mb-3 text-orange-700 dark:text-orange-300">
-                            Outils & organisation
-                        </h3>
-
-                        <p className="text-foreground leading-relaxed">
-                            Mise en place d’un workflow de développement utilisant Git pour le versioning, Docker pour l’environnement de développement et l’intégration continue, ainsi que Figma pour l’intégration des interfaces et maquettes UI.
-                        </p>
-                    </div>
-
+                            <p className="text-foreground leading-relaxed">
+                                {text}
+                            </p>
+                        </motion.div>
+                    ))}
                 </div>
-            </section>
+            </motion.section>
 
             {/* ARCHITECTURE */}
-            <section className="max-w-5xl mx-auto px-4 py-16">
+            <motion.section className="max-w-5xl mx-auto px-4 py-16" initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}>
                 <h2 className="text-2xl md:text-3xl font-bold dark:text-orange-300 text-orange-700 mb-6">
                     Architecture de l'application
                 </h2>
@@ -181,7 +216,7 @@ export default function UnJourInternet() {
                         ))}
                     </ul>
                 </div>
-            </section>
+            </motion.section>
 
             {/* APERÇU */}
             <section className="max-w-6xl mx-auto px-4 py-16">
@@ -204,7 +239,10 @@ export default function UnJourInternet() {
             </section>
 
             {/* CONCEPTION */}
-            <section className="max-w-6xl mx-auto px-4 py-16">
+            <motion.section className="max-w-6xl mx-auto px-4 py-16" initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}>
                 <h2 className="text-2xl md:text-3xl font-bold dark:text-orange-300 text-orange-700 mb-6 text-center">
                     Conception & architecture technique
                 </h2>
@@ -231,7 +269,7 @@ export default function UnJourInternet() {
                         </p>
                     </div>
                 </div>
-            </section>
+            </motion.section>
 
             {/* RETOUR */}
             <div className="max-w-5xl mx-auto px-4 pb-16">

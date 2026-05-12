@@ -1,5 +1,6 @@
 "use client";
-
+import { motion } from "framer-motion";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Contact() {
@@ -76,8 +77,19 @@ export default function Contact() {
 
   return (
     <>
-      <section className="max-w-6xl mx-auto px-4 py-16 md:py-24">
-        <div className="text-center mb-16">
+      <motion.section
+        className="max-w-6xl mx-auto px-4 py-16 md:py-24"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <h1 className="text-4xl md:text-5xl font-bold dark:text-orange-300 text-orange-700 mb-4">
             CONTACT
           </h1>
@@ -85,15 +97,23 @@ export default function Contact() {
             Disponible pour des opportunités en développement web/mobile, ou pour toute discussion technique.
             Je réponds sous 24h à 48h.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid md:grid-cols-3 gap-6 mb-16">
-          {contacts.map(({ href, icon, label, value }) => (
-            <a
+          {contacts.map(({ href, icon, label, value }, index) => (
+            <motion.a
               key={label}
               href={href}
               target={href.startsWith("mailto") ? undefined : "_blank"}
               rel={href.startsWith("mailto") ? undefined : "noopener noreferrer"}
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.2,
+                ease: "easeOut",
+              }}
               className="group flex items-center gap-4 dark:bg-[#0a1e35] bg-black/5 border border-orange-300/20 p-5 rounded-xl dark:hover:border-orange-300/60 hover:border-orange-700 hover:bg-black/5 transition-all duration-300"
             >
               <div className="shrink-0 w-12 h-12 dark:bg-orange-300/10 bg-orange-700 rounded-lg flex items-center justify-center group-hover:bg-orange-300/20 transition">
@@ -101,20 +121,26 @@ export default function Contact() {
               </div>
 
               <div className="min-w-0">
-                <p className="dark:text-orange-300  text-orange-700 text-sm font-semibold uppercase tracking-wide">
+                <p className="dark:text-orange-300 text-orange-700 text-sm font-semibold uppercase tracking-wide">
                   {label}
                 </p>
                 <p className="text-foreground/90 text-sm truncate">
                   {value}
                 </p>
               </div>
-            </a>
+            </motion.a>
           ))}
         </div>
 
-        <div className="max-w-2xl mx-auto">
-          <div className=" dark:bg-[#0a1e35] bg-black/5  border border-orange-300/20 rounded-2xl p-8 md:p-10">
-            <h2 className="text-2xl font-bold dark:text-orange-300 text-orange-700  mb-6">
+        <motion.div
+          className="max-w-2xl mx-auto"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <div className="dark:bg-[#0a1e35] bg-black/5 border border-orange-300/20 rounded-2xl p-8 md:p-10">
+            <h2 className="text-2xl font-bold dark:text-orange-300 text-orange-700 mb-6">
               Envoyez-moi un message
             </h2>
 
@@ -138,9 +164,10 @@ export default function Contact() {
                     value={form.name}
                     onChange={handleChange}
                     placeholder="Votre nom"
-                    className="w-full dark:bg-[#061423] bg-white border dark:border-orange-300/20 border-orange-700  rounded-lg px-4 py-3 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-orange-300/60 transition"
+                    className="w-full dark:bg-[#061423] bg-white border dark:border-orange-300/20 border-orange-700 rounded-lg px-4 py-3 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-orange-300/60 transition"
                   />
                 </div>
+
                 <div className="space-y-2">
                   <label htmlFor="email" className="text-sm text-foreground/70 font-medium">
                     Email
@@ -157,6 +184,7 @@ export default function Contact() {
                   />
                 </div>
               </div>
+
               <div className="space-y-2">
                 <label htmlFor="subject" className="text-sm text-foreground/70 font-medium">
                   Sujet
@@ -172,6 +200,7 @@ export default function Contact() {
                   className="w-full dark:bg-[#061423] bg-white border dark:border-orange-300/20 border-orange-700 rounded-lg px-4 py-3 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-orange-300/60 transition"
                 />
               </div>
+
               <div className="space-y-2">
                 <label htmlFor="message" className="text-sm text-foreground/70 font-medium">
                   Message
@@ -187,6 +216,7 @@ export default function Contact() {
                   className="w-full dark:bg-[#061423] bg-white border dark:border-orange-300/20 border-orange-700 rounded-lg px-4 py-3 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-orange-300/60 transition resize-none"
                 />
               </div>
+
               <button
                 type="submit"
                 disabled={loading}
@@ -196,8 +226,18 @@ export default function Contact() {
               </button>
             </form>
           </div>
-        </div>
-      </section >
+        </motion.div>
+
+      </motion.section>
+      {/* RETOUR */}
+      <div className="max-w-5xl mx-auto px-4 pb-16">
+        <Link
+          href="/"
+          className="inline-block bg-orange-300 text-[#061423] px-6 py-2 rounded-lg font-bold hover:bg-white transition"
+        >
+          ← Retour page principale
+        </Link>
+      </div>
     </>
   );
 }

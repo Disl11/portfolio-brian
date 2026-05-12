@@ -47,7 +47,10 @@ export default function Home() {
       </motion.section>
 
       {/* À PROPOS */}
-      <section className="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-3 gap-15">
+      <motion.section className="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-3 gap-15" initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.7 }}>
         <div className="md:col-span-2">
           <h2 className="text-2xl md:text-3xl font-bold dark:text-orange-300 text-orange-700 mb-10">
             À PROPOS
@@ -97,33 +100,58 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section >
+      </motion.section >
 
       {/* PROJETS */}
-      <section className="max-w-6xl mx-auto px-4 py-16">
+      <motion.section
+        className="max-w-6xl mx-auto px-4 py-16"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.7 }}
+      >
         <h2 className="text-2xl md:text-3xl font-bold dark:text-orange-300 text-orange-700 mb-10">
           PROJETS
         </h2>
+
         <div className="flex flex-col gap-8 items-center">
           {[
             { label: "1 jour internet", img: "/images/logo_uji.png", href: "/projects/un-jour-internet" },
             { label: "BreakScore", img: "/images/breakdance.jpeg", href: "/projects/breakdanet" },
             { label: "Mon Portfolio", img: "/images/portfolio-photo.jpg", href: "/projects/portfolio" },
-          ].map(({ label, img, href }) => (
-            <Link
+          ].map(({ label, img, href }, index) => (
+            <motion.div
               key={label}
-              href={href}
-              className="relative w-full max-w-[700px] h-[150px] overflow-hidden hover:scale-105 transition cursor-pointer rounded-lg block"
+              initial={{
+                opacity: 0,
+                x: index % 2 === 0 ? 120 : -120,
+              }}
+              whileInView={{
+                opacity: 1,
+                x: 0,
+              }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{
+                duration: 0.7,
+                delay: index * 0.2,
+                ease: "easeOut",
+              }}
+              className="w-full max-w-[700px]"
             >
-              <Image src={img} alt={label} fill sizes="700px" className="object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#09223bcc] to-transparent" />
-              <p className="absolute top-1/2 left-12 -translate-y-1/2 text-white font-bold text-3xl drop-shadow-lg z-10">
-                {label}
-              </p>
-            </Link>
+              <Link
+                href={href}
+                className="relative w-full max-w-[700px] h-[150px] overflow-hidden hover:scale-105 transition cursor-pointer rounded-lg block"
+              >
+                <Image src={img} alt={label} fill sizes="700px" className="object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#09223bcc] to-transparent" />
+                <p className="absolute top-1/2 left-12 -translate-y-1/2 text-white font-bold text-3xl drop-shadow-lg z-10">
+                  {label}
+                </p>
+              </Link>
+            </motion.div>
           ))}
         </div>
-      </section>
+      </motion.section>
 
       {/* COMPÉTENCES */}
       <motion.section
@@ -163,8 +191,12 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* PROJETS */}
-      <section className="max-w-6xl mx-auto px-4 py-16">
+      {/* contact */}
+      <motion.section className="max-w-6xl mx-auto px-4 py-16"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.7 }}>
         <div className="flex items-center  gap-4 flex-wrap text-lg">
           <p>Disponible pour des opportunités Developpeur junior web/mobile ou des collaborations techniques.</p>
           <Link
@@ -174,7 +206,7 @@ export default function Home() {
             Me contacter
           </Link>
         </div>
-      </section>
+      </motion.section>
     </>
   );
 }

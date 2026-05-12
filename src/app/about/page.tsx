@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function About() {
     const container = {
@@ -20,7 +21,9 @@ export default function About() {
     return (
         <>
             {/* HERO */}
-            <section className="max-w-5xl mx-auto px-4 py-10 text-center">
+            <motion.section className="max-w-5xl mx-auto px-4 py-10 text-center" initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}>
                 <h1 className="text-4xl dark:text-orange-300 text-orange-700 md:text-6xl font-bold mb-6">
                     Brian Farnier
                 </h1>
@@ -35,7 +38,7 @@ export default function About() {
 
                     Télécharger mon CV
                 </a>
-            </section >
+            </motion.section >
 
             {/* COMPÉTENCES */}
             <motion.section
@@ -75,7 +78,9 @@ export default function About() {
                 </div>
             </motion.section>
             {/* PARCOURS */}
-            <section className="max-w-5xl mx-auto px-4 py-10">
+            <motion.section className="max-w-5xl mx-auto px-4 py-10" initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}>
                 <h2 className="text-2xl dark:text-orange-300 text-orange-700 mb-6">
                     Mon parcours
                 </h2>
@@ -107,12 +112,14 @@ export default function About() {
                     m’a permis de gagner en adaptabilité et d’améliorer mon niveau d’anglais
                     dans un contexte international.
                 </p>
-            </section>
+            </motion.section>
 
 
 
             {/* MÉTHODE */}
-            <section className="max-w-5xl mx-auto px-4 py-10">
+            <motion.section className="max-w-5xl mx-auto px-4 py-10" initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}>
                 <h2 className="text-2xl dark:text-orange-300 text-orange-700 mb-6">
                     Ma façon de travailler
                 </h2>
@@ -136,10 +143,12 @@ export default function About() {
                     Agile, notamment Scrum et Kanban, avec une organisation en sprints,
                     des réunions de suivi et une gestion des tâches en équipe.
                 </p>
-            </section>
+            </motion.section>
 
             {/* OBJECTIFS */}
-            <section className="max-w-5xl mx-auto px-4 py-16">
+            <motion.section className="max-w-5xl mx-auto px-4 py-16" initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}>
                 <h2 className="text-2xl dark:text-orange-300 text-orange-700 mb-6">
                     Mes objectifs
                 </h2>
@@ -157,15 +166,30 @@ export default function About() {
                     participer à des projets réels et développer des solutions utiles,
                     maintenables et bien construites.
                 </p>
-            </section>
+            </motion.section>
 
             {/* EXPÉRIENCES & FORMATIONS */}
-            <section className="max-w-5xl mx-auto px-4 py-16">
+            <motion.section
+                className="max-w-5xl mx-auto px-4 py-16"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.7 }}
+            >
                 <div className="grid md:grid-cols-2 gap-12">
+
                     {/* Left: Expériences */}
-                    <div>
-                        <h3 className="text-xl font-bold dark:text-orange-300/90  text-orange-700 mb-8">Expériences</h3>
-                        <div className="relative border-l-2 border-orange-300/30  pl-8 space-y-10">
+                    <motion.div
+                        initial={{ opacity: 0, x: -80 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <h3 className="text-xl font-bold dark:text-orange-300/90 text-orange-700 mb-8">
+                            Expériences
+                        </h3>
+
+                        <div className="relative border-l-2 border-orange-300/30 pl-8 space-y-10">
                             {[
                                 {
                                     period: "Janvier 2026 – Mars 2026",
@@ -208,10 +232,17 @@ export default function About() {
                                         "Débitage de tranches et blocs",
                                     ],
                                 },
-                            ].map(({ period, title, company, points }) => (
-                                <div key={period} className="relative">
+                            ].map(({ period, title, company, points }, index) => (
+                                <motion.div
+                                    key={period}
+                                    className="relative"
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: index * 0.15 }}
+                                >
                                     <div className="absolute -left-[41px] top-1 w-5 h-5 bg-orange-300 rounded-full border-4 border-[#061423]" />
-                                    <p className=" dark:text-orange-300/70 text-orange-700 text-sm font-medium mb-1">{period}</p>
+                                    <p className="dark:text-orange-300/70 text-orange-700 text-sm font-medium mb-1">{period}</p>
                                     <h3 className="text-lg font-bold text-foreground mb-1">{title}</h3>
                                     <p className="text-foreground/60 text-sm mb-3">{company}</p>
                                     <ul className="space-y-1">
@@ -222,14 +253,22 @@ export default function About() {
                                             </li>
                                         ))}
                                     </ul>
-                                </div>
+                                </motion.div>
                             ))}
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Right: Formations */}
-                    <div>
-                        <h3 className="text-xl font-bold dark:text-orange-300/90 text-orange-700 mb-8">Formations</h3>
+                    <motion.div
+                        initial={{ opacity: 0, x: 80 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <h3 className="text-xl font-bold dark:text-orange-300/90 text-orange-700 mb-8">
+                            Formations
+                        </h3>
+
                         <div className="space-y-6">
                             {[
                                 {
@@ -247,20 +286,30 @@ export default function About() {
                                     title: "Bac Professionnel Métier de la pierre",
                                     company: "Lycée des Alpilles, Miramas (13)",
                                 },
-                            ].map(({ period, title, company }) => (
-                                <div key={period} className="bg-black/5 dark:bg-[#0a1e35] border border-orange-300/20 rounded-xl p-5">
+                            ].map(({ period, title, company }, index) => (
+                                <motion.div
+                                    key={period}
+                                    className="bg-black/5 dark:bg-[#0a1e35] border border-orange-300/20 rounded-xl p-5"
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: index * 0.2 }}
+                                >
                                     <p className="dark:text-orange-300/70 text-orange-700 text-sm font-medium mb-1">{period}</p>
                                     <h4 className="text-base font-bold text-foreground dark:text-foreground mb-1">{title}</h4>
                                     <p className="text-foreground/60 dark:text-foreground/60 text-sm">{company}</p>
-                                </div>
+                                </motion.div>
                             ))}
                         </div>
-                    </div>
+                    </motion.div>
+
                 </div>
-            </section>
+            </motion.section>
 
             {/* HOBBIES */}
-            <section className="max-w-5xl mx-auto px-4 py-16">
+            <motion.section className="max-w-5xl mx-auto px-4 py-16" initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}>
                 <h2 className="text-2xl dark:text-orange-300 text-orange-700 mb-6">Hobbies</h2>
                 <div className="flex flex-col md:flex-row items-center gap-10">
                     <div className="flex flex-wrap gap-3 flex-1">
@@ -290,7 +339,17 @@ export default function About() {
                         </div>
                     </div>
                 </div>
-            </section>
+
+            </motion.section>
+            {/* RETOUR */}
+            <div className="max-w-5xl mx-auto px-4 pb-16">
+                <Link
+                    href="/"
+                    className="inline-block bg-orange-300 text-[#061423] px-6 py-2 rounded-lg font-bold hover:bg-white transition"
+                >
+                    ← Retour page principale
+                </Link>
+            </div>
         </>
     );
 }
