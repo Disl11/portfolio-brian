@@ -60,7 +60,7 @@ export default function Home() {
           </p>
 
           <p className="text-foreground text-lg md:text-xl leading-relaxed mb-6">
-            Aujourd’hui développeur fullstack junior, je développe des projets avec des technologies comme MERN et Flutter, à travers différentes expériences pratiques qui m’ont permis de concevoir et réaliser des applications de bout en bout.
+            Aujourd’hui développeur fullstack junior, je développe des projets avec des technologies comme Next.js, python et Flutter, à travers différentes expériences pratiques qui m’ont permis de concevoir et réaliser des applications de bout en bout.
           </p>
           <Link
             href="/about"
