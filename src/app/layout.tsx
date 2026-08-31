@@ -5,51 +5,56 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/navbar";
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+	variable: "--font-geist-sans",
+	subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+	variable: "--font-geist-mono",
+	subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Brian Farnier - Développeur Fullstack Junior | Portfolio",
-  description: "Portfolio professionnel de Brian Farnier, développeur fullstack junior spécialisé en MERN et Flutter. Ancien tailleur de pierre avec 12 ans d'expérience, reconverti en développement web/mobile en 2025. Basé à Montpellier, disponible pour des opportunités junior.",
+	title: "Brian Farnier - Animateur polyvalent | Portfolio",
+	description:
+		"Portfolio professionnel de Brian Farnier, Animateur polyvalen. Ancien tailleur de pierre avec 12 ans d'expérience, reconverti dans l'animation en 2026. Basé à Montpellier, disponible pour des opportunités junior.",
 };
 
 export default function RootLayout({
-  children,
+	children,
 }: Readonly<{
-  children: React.ReactNode;
+	children: React.ReactNode;
 }>) {
-  return (
-    <html
-      lang="fr" suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <head>
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
-        />
-      </head>
-      <body className="min-h-full flex flex-col">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Navbar />
-          <main className="flex-1 min-h-screen bg-white dark:bg-[#061423]">{children}
-          </main>
-          <footer className="text-center py-6 border-t border-black/10 dark:border-white/10">
-            <p className="text-black/60 dark:text-white/60">© 2026 powered by Brian Farnier</p>
-          </footer>
-        </ThemeProvider>
-      </body>
-    </html>
-  );
+	return (
+		<html
+			lang="fr"
+			suppressHydrationWarning
+			className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+		>
+			<head>
+				<link
+					rel="stylesheet"
+					href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+				/>
+			</head>
+			<body className="min-h-full flex flex-col">
+				<ThemeProvider
+					attribute="class"
+					defaultTheme="dark"
+					enableSystem
+					disableTransitionOnChange
+				>
+					<Navbar />
+					<main className="flex-1 min-h-screen bg-white dark:bg-[#061423]">
+						{children}
+					</main>
+					<footer className="text-center py-6 border-t border-black/10 dark:border-white/10">
+						<p className="text-black/60 dark:text-white/60">
+							© 2026 powered by Brian Farnier
+						</p>
+					</footer>
+				</ThemeProvider>
+			</body>
+		</html>
+	);
 }
