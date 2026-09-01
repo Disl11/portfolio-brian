@@ -35,7 +35,7 @@ export default function About() {
 				</p>
 
 				<a
-					href="/CV Brian Farnier animateur septembre.pdf"
+					href="/CV-Brian farnier Animateur 2026.pdf"
 					download
 					className="inline-block mt-8 px-6 py-3 bg-orange-300 text-[#061423] font-bold rounded-lg hover:bg-white transition"
 				>
@@ -66,9 +66,9 @@ export default function About() {
 					Fin 2025, j’ai entrepris une reconversion dans le
 					développement web et mobile. Cette orientation ne s’étant
 					finalement pas concrétisée professionnellement, j’ai choisi
-					de me tourner vers mon second projet : l’animation, un
-					domaine qui me correspond également par mon parcours dans la
-					culture Hip-Hop, danse et aussi le sport avec le badminton.
+					de poursuivre mon parcours dans l’animation, un domaine qui
+					me correspond également grâce à mon parcours dans la culture
+					Hip-Hop, la danse et le sport, notamment le badminton.
 				</p>
 
 				<div className="w-full flex justify-center gap-6">
@@ -166,21 +166,25 @@ export default function About() {
 				</p>
 
 				<p className="text-foreground text-lg md:text-xl leading-relaxed">
-					Mon objectif est de réaliser une saison d’hiver afin de
-					découvrir un univers qui m’est encore presque totalement
-					inconnu. Cette nouvelle expérience représente pour moi une
-					occasion de sortir de ma zone de confort, de mettre à
-					l’épreuve ma capacité d’adaptation et de continuer à
-					progresser en tant qu’animateur polyvalent.
+					Je souhaite aujourd’hui réaliser une saison d’hiver afin de
+					découvrir un nouvel environnement et d’enrichir mon
+					expérience dans l’animation. Après une première expérience
+					réussie en saison, j’ai envie de relever ce nouveau défi, de
+					m’adapter à un autre cadre de travail et de continuer à
+					développer mes compétences en tant qu’animateur polyvalent.
 				</p>
 			</motion.section>
 
 			{/* EXPÉRIENCES & FORMATIONS */}
 			<motion.section
-				className="max-w-5xl mx-auto px-4 py-16"
+				className="max-w-5xl mx-auto px-6 sm:px-8 py-16"
 				initial={{ opacity: 0, y: 40 }}
 				whileInView={{ opacity: 1, y: 0 }}
-				viewport={{ once: true, amount: 0.2 }}
+				viewport={{
+					once: true,
+					amount: 0.05,
+					margin: "0px 0px 200px 0px",
+				}}
 				transition={{ duration: 0.7 }}
 			>
 				<div className="grid md:grid-cols-2 gap-12">
@@ -188,7 +192,11 @@ export default function About() {
 					<motion.div
 						initial={{ opacity: 0, x: -80 }}
 						whileInView={{ opacity: 1, x: 0 }}
-						viewport={{ once: true, amount: 0.3 }}
+						viewport={{
+							once: true,
+							amount: 0.05,
+							margin: "0px 0px 200px 0px",
+						}}
 						transition={{ duration: 0.8 }}
 					>
 						<h3 className="text-xl font-bold dark:text-orange-300/90 text-orange-700 mb-8">
