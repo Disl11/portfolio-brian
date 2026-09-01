@@ -74,10 +74,10 @@ export default function Home() {
 						continuer à apprendre, découvrir de nouveaux univers et
 						relever le défi d’une saison d’hiver.
 					</p>
-					<div className="flex items-center gap-56">
+					<div className="flex items-center gap-25">
 						<Link
 							href="/about"
-							className="inline-block bg-orange-300 text-[#061423] px-4 py-2 rounded-lg font-bold hover:bg-white transition"
+							className="block w-full sm:w-auto bg-orange-300 text-[#061423] px-4 py-2 rounded-lg font-bold hover:bg-white transition text-center"
 						>
 							En savoir plus
 						</Link>
@@ -217,7 +217,11 @@ export default function Home() {
 				className="max-w-6xl mx-auto px-4 py-12"
 				initial="hidden"
 				whileInView="show"
-				viewport={{ once: true, amount: 0.2 }}
+				viewport={{
+					once: true,
+					amount: 0.05,
+					margin: "0px 0px -50px 0px",
+				}}
 				variants={container}
 			>
 				<motion.h2
